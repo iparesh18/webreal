@@ -1,37 +1,49 @@
-import React, { useState } from 'react'
-import Nav from './components/Nav'
-import Home from './pages/Home'
-import Service from './pages/Service'
-import Pricing from './pages/Pricing';
-import WhyUs from './pages/WhyUs';
-import Form from './pages/Form';
-import Footer from './components/Footer';
+import React, { useState, Suspense, lazy } from "react";
+
+// Lazy imports
+const Nav = lazy(() => import("./components/Nav"));
+const Home = lazy(() => import("./pages/Home"));
+const Service = lazy(() => import("./pages/Service"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const WhyUs = lazy(() => import("./pages/WhyUs"));
+const Form = lazy(() => import("./pages/Form"));
+const Footer = lazy(() => import("./components/Footer"));
 
 const App = () => {
   const [pricingHover, setPricingHover] = useState(false);
 
   return (
     <div>
-  <Nav />
-  <div id="Home">
-    <Home />
-  </div>
-  <div id="Services">
-    <Service pricingHover={pricingHover} />
-  </div>
-  <div id="Pricing">
-    <Pricing setPricingHover={setPricingHover} />
-  </div>
-  <div id="Why Us">
-    <WhyUs />
-  </div>
-  <div id="Contact">
-    <Form />
-  </div>
-  <Footer />
-</div>
+      {/* Suspense fallback - temporary loader */}
+      <Suspense fallback={<div className="text-center p-10">Loading...</div>}>
 
-  )
-}
+        <Nav />
 
-export default App
+        <div id="Home">
+          <Home />
+        </div>
+
+        <div id="Services">
+          <Service pricingHover={pricingHover} />
+        </div>
+
+        <div id="Pricing">
+          <Pricing setPricingHover={setPricingHover} />
+        </div>
+
+        <div id="Why Us">
+          <WhyUs />
+        </div>
+
+        <div id="Contact">
+          <Form />
+        </div>
+
+        <Footer />
+
+      </Suspense>
+    </div>
+  );
+};
+
+export default App;

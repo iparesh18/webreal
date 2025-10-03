@@ -1,9 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import { motion } from "framer-motion";
-import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
-  // Function to scroll to a section by id
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -22,8 +21,8 @@ const Footer = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         {/* Logo & Description */}
-        <div className="  flex flex-col items-center md:items-start">
-     <h1 className="font-neue-light text-2xl text-[#7947ac]"> WEB-REAL | OBSESSED</h1>
+        <div className="flex flex-col items-center md:items-start">
+          <h1 className="font-neue-light text-2xl text-[#7947ac]">WEB-REAL | OBSESSED</h1>
           <p className="text-white/70 text-center md:text-left">
             Crafting modern digital experiences for brands and businesses worldwide.
           </p>
@@ -31,17 +30,16 @@ const Footer = () => {
 
         {/* Navigation Links */}
         <div className="flex flex-col items-center md:items-start">
-     <h1 className="font-neue-light text-3xl text-gray-600">WE BELIVE IN DOING.</h1>
+          <h1 className="font-neue-light text-3xl text-gray-600">WE BELIEVE IN DOING.</h1>
         </div>
 
         {/* Social Links */}
         <div className="flex flex-col items-center md:items-start">
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
           <div className="flex gap-4 text-2xl items-center">
-            <motion.a whileHover={{ scale: 1.3, color: "#8e3bc6" }} href="https://www.instagram.com/webreal_official?igsh=MTZkdzYwaTBmZ210bQ==">
+            <motion.a whileHover={{ scale: 1.3, color: "#8e3bc6" }} href="https://www.instagram.com/webreal_official">
               <FaInstagram />
             </motion.a>
-
           </div>
         </div>
       </motion.div>
@@ -62,4 +60,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

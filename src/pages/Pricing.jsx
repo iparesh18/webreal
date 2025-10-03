@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pricing = ({ setPricingHover }) => {
+const Pricing = React.memo(({ setPricingHover }) => {
   const plans = [
     {
       title: "Basic",
@@ -80,6 +80,6 @@ const Pricing = ({ setPricingHover }) => {
       </div>
     </section>
   );
-};
+});
 
 export default Pricing;

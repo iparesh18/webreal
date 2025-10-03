@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import logo from "../assets/images/logp.png";
+import React, { useState, memo } from "react";
+import logo from "../assets/images/hero-logo.webp";
 
-export default function Nav() {
+const Nav = () => {
   const [open, setOpen] = useState(false);
 
   const links = ["Home", "Services", "Pricing", "Why Us", "Contact"];
@@ -19,7 +19,7 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto flex justify-between items-center h-full px-4">
         {/* Logo */}
         <div className="cursor-pointer flex items-center h-full">
-          <img src={logo} alt="WebReal Logo" className="h-[150px] md:h-[180px]" />
+          <img src={logo} alt="WebReal Logo" className="h-[150px] md:h-[180px]" loading="lazy" />
         </div>
 
         {/* Desktop Links */}
@@ -78,4 +78,6 @@ export default function Nav() {
       </div>
     </nav>
   );
-}
+};
+
+export default memo(Nav);

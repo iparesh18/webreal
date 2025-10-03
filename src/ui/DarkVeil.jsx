@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, memo } from 'react';
 import { Renderer, Program, Mesh, Triangle, Vec2 } from 'ogl';
 
 const vertex = `
@@ -73,7 +73,7 @@ void main(){
 }
 `;
 
-export default function DarkVeil({
+ function DarkVeil({
   hueShift = 0,
   noiseIntensity = 0,
   scanlineIntensity = 0,
@@ -147,4 +147,4 @@ export default function DarkVeil({
 
 
 
-
+export default React.memo(DarkVeil)

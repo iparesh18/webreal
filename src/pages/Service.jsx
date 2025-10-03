@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import webCreationImg from "../assets/images/landing-page.png";
-import webMaintenanceImg from "../assets/images/main.png";
-import seoImg from "../assets/images/seo.png";
-import resImg from "../assets/images/responsive.png";
-import dashboardImg from "../assets/images/dashboard.png";
-import whatsappImg from "../assets/images/whatsapp.png";
-import chatbotImg from "../assets/images/chatbot.png";
+import webCreationImg from "../assets/images/landing-page.webp";
+import webMaintenanceImg from "../assets/images/main.webp";
+import seoImg from "../assets/images/seo.webp";
+import resImg from "../assets/images/responsive.webp";
+import dashboardImg from "../assets/images/dashboard.webp";
+import whatsappImg from "../assets/images/whatsapp.webp";
+import chatbotImg from "../assets/images/chatbot.webp";
+
 
 const aiToolsServices = [
   {
@@ -49,7 +50,7 @@ const services = [
   },
 ];
 
-export default function Service({ pricingHover }) {
+const Service = ({ pricingHover })=>{
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [hovering, setHovering] = useState(false);
 
@@ -199,3 +200,4 @@ export default function Service({ pricingHover }) {
     </div>
   );
 }
+export default React.memo(Service);

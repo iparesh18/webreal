@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import DarkVeil from "../ui/DarkVeil";
-import TextType from "../ui/TextType";
+import TextType from "../ui/Texttype";
 import logo from "../assets/images/hero-logo.webp";
 import CircularText from "../ui/CircularText";
 

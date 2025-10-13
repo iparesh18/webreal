@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webreal.vercel.app/sitemap.xml

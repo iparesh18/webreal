@@ -1,4 +1,5 @@
 import React, { useState, Suspense, lazy } from "react";
+import OurProcess from "./pages/ourProcess";
 
 // Lazy imports
 const Nav = lazy(() => import("./components/Nav"));
@@ -34,6 +35,8 @@ const App = () => {
         <div id="Why Us">
           <WhyUs />
         </div>
+
+    <OurProcess/>
 
         <div id="Contact">
           <Form />

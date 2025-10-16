@@ -4,7 +4,7 @@ import logo from "../assets/images/hero-logo.webp";
 const Nav = () => {
   const [open, setOpen] = useState(false);
 
-  const links = ["Home", "Services", "Pricing", "Why Us", "Contact"];
+  const links = ["Home", "Services", "About", "Why Us", "Contact"];
 
   const handleScroll = (link) => {
     const section = document.getElementById(link);

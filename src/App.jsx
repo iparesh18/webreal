@@ -1,5 +1,6 @@
 import React, { useState, Suspense, lazy } from "react";
 import OurProcess from "./pages/ourProcess";
+import AboutUs from "./pages/About";
 
 // Lazy imports
 const Nav = lazy(() => import("./components/Nav"));
@@ -17,7 +18,6 @@ const App = () => {
     <div>
       {/* Suspense fallback - temporary loader */}
       <Suspense fallback={<div className="text-center p-10">Loading...</div>}>
-
         <Nav />
 
         <div id="Home">
@@ -28,22 +28,23 @@ const App = () => {
           <Service pricingHover={pricingHover} />
         </div>
 
-        <div id="Pricing">
+        {/* <div id="Pricing">
           <Pricing setPricingHover={setPricingHover} />
-        </div>
+        </div> */}
 
         <div id="Why Us">
           <WhyUs />
         </div>
 
-    <OurProcess/>
-
+        <OurProcess />
+        <div id="About">
+          <AboutUs />
+        </div>
         <div id="Contact">
           <Form />
         </div>
 
         <Footer />
-
       </Suspense>
     </div>
   );

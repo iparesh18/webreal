@@ -2,7 +2,7 @@ import React from "react";
 import founder from "../assets/team/founder.webp"
 import marketing from "../assets/team/marketing.webp"
 import client from "../assets/team/client.webp"
-import ui from "../assets/team/ui.webp"
+import ui from "../assets/team/designer.webp"
 
 const team = [
   {

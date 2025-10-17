@@ -3,34 +3,44 @@ import DarkVeil from "../ui/DarkVeil";
 import TextType from "../ui/Texttype";
 import logo from "../assets/images/hero-logo.webp";
 import CircularText from "../ui/CircularText";
+import bg from "../assets/video/bg.mp4";
 
 const Home = () => {
   return (
-    <div className="w-screen h-screen relative overflow-hidden bg-[#000]">
-      {/* Background Canvas */}
+    <div className="w-screen h-screen relative overflow-hidden">
+      {/* Video Background */}
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        src={bg}
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+
+      {/* Optional overlay to darken video for better text contrast */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/50 -z-0"></div>
 
       {/* Overlay / Content */}
       <div className="absolute top-0 left-0 w-full h-full z-10 flex flex-col justify-center items-center text-center">
         <div className="upper w-full flex justify-center items-center text-center px-2 pt-30">
           <div className="text-center">
-            {/* Only this TextType will re-render when props change */}
             <TextType
               text={["WEBREAL.", "for your website.", "GROW-WITH-US."]}
               typingSpeed={75}
               pauseDuration={1500}
               showCursor={true}
               cursorCharacter="|"
-              className="text-3xl font-neue-light text-black"
+              className="text-3xl font-neue-light text-white"
             />
           </div>
         </div>
 
         <div className="mid w-full h-[300px] flex flex-col justify-center items-center text-center text-white">
-          {/* Wrapper for logo + text */}
           <div className="flex flex-col md:flex-row justify-center items-center">
             {/* Logo */}
             <div>
-              <img src={logo} alt="logo" className="h-[270px] md:h-[250px]" loading="lazy"/>
+              <img src={logo} alt="logo" className="h-[270px] md:h-[250px]" loading="lazy" />
             </div>
 
             {/* Text */}
@@ -70,5 +80,4 @@ const Home = () => {
   );
 };
 
-// Export as memo to avoid unnecessary re-renders of Home itself
 export default memo(Home);

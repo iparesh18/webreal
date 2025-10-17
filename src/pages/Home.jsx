@@ -6,9 +6,8 @@ import CircularText from "../ui/CircularText";
 
 const Home = () => {
   return (
-    <div className="w-screen h-screen relative overflow-hidden">
+    <div className="w-screen h-screen relative overflow-hidden bg-[#000]">
       {/* Background Canvas */}
-      <DarkVeil className="absolute top-0 left-0 w-full h-full z-0" />
 
       {/* Overlay / Content */}
       <div className="absolute top-0 left-0 w-full h-full z-10 flex flex-col justify-center items-center text-center">

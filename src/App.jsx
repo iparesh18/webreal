@@ -24,9 +24,9 @@ const App = () => {
           <Home />
         </div>
 
-        <div id="Services">
+        {/* <div id="Services">
           <Service pricingHover={pricingHover} />
-        </div>
+        </div> */}
 
         {/* <div id="Pricing">
           <Pricing setPricingHover={setPricingHover} />

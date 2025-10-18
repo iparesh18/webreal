@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import founder from "../assets/team/founder.webp";
+import founder from "../assets/team/founder.jpg";
 import marketing from "../assets/team/marketing.webp";
 import client from "../assets/team/client.webp";
 import ui from "../assets/team/designer.webp";

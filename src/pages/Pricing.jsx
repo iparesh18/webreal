@@ -1,35 +1,48 @@
 import React from "react";
+import { Globe, Rocket, Crown, CheckCircle2 } from "lucide-react";
 
 const Pricing = React.memo(({ setPricingHover }) => {
   const plans = [
     {
       title: "Basic",
-      price: "₹1,999",
+      icon: <Globe size={36} className="text-purple-400 mb-4" />,
+      price: "$79",
       features: [
-        "3 Page Website",
-        "Basic SEO Set-up",
-        "GitHub/Vercel Deployment",
-        "1 Month Free Maintenance",
+        "3 Page Responsive Website",
+        "WhatsApp Chat Button Integration",
+        "Business Email Setup (1 Email ID)",
+        "Basic SEO + Google Analytics",
+        "1 Free Revision",
+        "7 Days Post-Launch Support",
+        "Domain Cost Additional",
+      ],
+    },
+    {
+      title: "Gold",
+      icon: <Rocket size={36} className="text-yellow-400 mb-4" />,
+      price: "$199",
+      features: [
+        "6 Page Custom Website",
+        "WhatsApp Chat + Contact Form",
+        "Business Email Setup (2 Email IDs)",
+        "Standard SEO + Google Analytics + Search Console",
+        "2 Free Revisions",
+        "30 Days Post-Launch Support",
+        "Domain Cost Additional",
       ],
     },
     {
       title: "Pro",
-      price: "₹4,999",
+      icon: <Crown size={36} className="text-pink-400 mb-4" />,
+      price: "$499",
       features: [
-        "6 Page Website",
-        "Advanced SEO Set-up",
-        "Custom Domain + Hosting",
-        "3 Months Free Support",
-      ],
-    },
-    {
-      title: "Custom",
-      price: "₹9,999",
-      features: [
-        "Custom Pages",
-        "Premium SEO & Analytics",
-        "Custom Dashboard/Features",
-        "6 Months Free Support",
+        "Up to 10 Pages or Dynamic Website",
+        "WhatsApp + Lead Capture Integration",
+        "Business Email Setup (up to 5 IDs)",
+        "Advanced SEO + Tag Manager + Analytics",
+        "3 Free Revisions",
+        "Priority Support (60 Days)",
+        "Domain Cost Additional",
       ],
     },
   ];
@@ -47,30 +60,41 @@ const Pricing = React.memo(({ setPricingHover }) => {
               key={index}
               onMouseEnter={() => setPricingHover(true)}
               onMouseLeave={() => setPricingHover(false)}
-              className={`flex flex-col justify-between h-[550px] p-8 text-white backdrop-blur-lg border rounded-2xl shadow-lg
+              className={`flex flex-col justify-between h-full p-8 text-white backdrop-blur-lg border rounded-2xl shadow-lg transition-all duration-300
                 ${
                   plan.title === "Pro"
-                    ? "bg-purple-600/10 border-purple-400 shadow-2xl scale-105 transform transition-all duration-300"
+                    ? "bg-purple-600/10 border-purple-400 shadow-2xl scale-105"
                     : "bg-white/20 border-white"
                 }`}
             >
-              <div>
-                <h3 className="text-2xl font-bold mb-4">{plan.title}</h3>
+              {/* Card Top */}
+              <div className="flex flex-col flex-grow">
+                <div className="flex flex-col items-start">
+                  {plan.icon}
+                  <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
+                </div>
+
                 <p className="text-4xl font-bold mb-6">
                   {plan.price}
-                  <span className="text-lg font-neue-light">/Pay-Once</span>
+                  <span className="text-lg font-neue-light"> / Pay Once</span>
                 </p>
+
                 <ul className="space-y-3 mb-6">
                   {plan.features.map((f, i) => (
-                    <li key={i}>✔ {f}</li>
+                    <li key={i} className="flex items-start gap-2">
+                      <CheckCircle2 size={18} className="text-green-400 mt-1" />
+                      <span>{f}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
+
+              {/* Card Bottom */}
               <a
                 href="https://wa.me/919302754600"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 bg-[#000000] text-white py-3 px-6 rounded-lg hover:bg-[#8e3bc6] text-center"
+                className="bg-[#000000] text-white py-3 px-6 rounded-lg hover:bg-[#8e3bc6] text-center transition-all"
               >
                 Get Started
               </a>
